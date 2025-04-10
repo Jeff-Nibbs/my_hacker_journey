@@ -1,4 +1,4 @@
-#! /bin/zsh
+#! /bin/bash
 
 x=1
 while [[ $x -le 100 ]]

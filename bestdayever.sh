@@ -1,4 +1,4 @@
-#! /bin/zsh
+#! /bin/bash
 
 nice=$1
 user=$(whoami)
