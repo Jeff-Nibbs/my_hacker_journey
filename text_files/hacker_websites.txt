@@ -1,4 +1,9 @@
-https://academy.tcm-sec.com/
-https://tryhackme.com/hacktivities
 https://academy.hackthebox.com/modules/inprogress
+https://tldr.tech/
+https://hackaday.com/
 https://github.com/Jeff-Nibbs
+
+
+
+
+
