@@ -1,6 +1,6 @@
 https://academy.hackthebox.com/modules/inprogress
-https://tldr.tech/
 https://hackaday.com/
+https://www.examcompass.com/
 https://github.com/Jeff-Nibbs
 
 
