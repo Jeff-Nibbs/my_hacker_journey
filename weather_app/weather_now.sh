@@ -4,6 +4,10 @@ format_date () {
   echo "$( date -r $1 "+| %a %b %d ~ %I:%M %p |" )"  
 }
 
+format_time () {
+  echo "$( date -r $1 "+%I:%M %p" )"
+}
+
 my_lat="38.807930"
 my_lon="-121.273643"
 
@@ -26,6 +30,9 @@ store_current_desc=$( cat hack_stuff/weather_app/cahe_store_weather.txt | jq ".w
 
 time=$( cat hack_stuff/weather_app/cahe_store_weather.txt | jq ".dt" )
 
+my_feels_like=$( cat hack_stuff/weather_app/cahe_my_weather.txt | jq ".main.feels_like" )
+
+store_feels_like=$( cat hack_stuff/weather_app/cahe_store_weather.txt | jq ".main.feels_like" )
 
 sunrise=$( cat hack_stuff/weather_app/cahe_my_weather.txt | jq ".sys.sunrise" )
 
@@ -36,14 +43,20 @@ am="AM"
 pm="PM"
 
 echo " "
-echo "        $( format_date $time )"
+echo "              $( format_date $time )"
 echo " "
-echo "Home is ${my_current_temp}${fahrenheit} and $my_current_desc outside."
+echo "                         Home"
+echo "                   Temp: ${my_current_temp}${fahrenheit}"
+echo "             Feels Like: ${my_feels_like}${fahrenheit}"
+echo "                  $my_current_desc outside"
 echo " "
-echo "Work is ${store_current_temp}${fahrenheit} and $store_current_desc outside."
+echo "                         Work"
+echo "                   Temp: ${store_current_temp}${fahrenheit}"
+echo "             Feels Like: ${store_feels_like}${fahrenheit}"
+echo "                  $store_current_desc outside"
 echo " "
-echo "Sunrise:$( format_date $sunrise )"
-echo "Sunset: $( format_date $sunset )"
+echo "                Sunrise: $( format_time $sunrise )"
+echo "                 Sunset: $( format_time $sunset )"
 echo " "
 
 
