@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+format_date () {
+  echo "$( date -r $1 "+| %a %b %d ~ %I:%M %p |" )"  
+}
+
 my_lat="38.807930"
 my_lon="-121.273643"
 
@@ -22,15 +26,25 @@ store_current_desc=$( cat hack_stuff/weather_app/cahe_store_weather.txt | jq ".w
 
 time=$( cat hack_stuff/weather_app/cahe_store_weather.txt | jq ".dt" )
 
-echo " "
-echo "$( date -r $time "+| %a %b %d ~ %I:%M %p |" )"
-echo " "
-echo "Home is $my_current_temp °F and $my_current_desc outside."
-echo " "
-echo "Work is $store_current_temp °F and $store_current_desc outside."
-echo " "
 
+sunrise=$( cat hack_stuff/weather_app/cahe_my_weather.txt | jq ".sys.sunrise" )
 
+sunset=$( cat hack_stuff/weather_app/cahe_my_weather.txt | jq ".sys.sunset" )
+
+fahrenheit="°F"
+am="AM"
+pm="PM"
+
+echo " "
+echo "        $( format_date $time )"
+echo " "
+echo "Home is ${my_current_temp}${fahrenheit} and $my_current_desc outside."
+echo " "
+echo "Work is ${store_current_temp}${fahrenheit} and $store_current_desc outside."
+echo " "
+echo "Sunrise:$( format_date $sunrise )"
+echo "Sunset: $( format_date $sunset )"
+echo " "
 
 
 

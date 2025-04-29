@@ -36,8 +36,10 @@ do
   desc=$( cat hack_stuff/weather_app/cahe_forcast.txt | jq ".list.[$i | tonumber].weather.[0].description" )
   
   windSpeed=$( cat hack_stuff/weather_app/cahe_forcast.txt | jq ".list.[$i | tonumber].wind.speed" )
-  
+ 
   windDirection=$( cat hack_stuff/weather_app/cahe_forcast.txt | jq ".list.[$i | tonumber].wind.deg" )
+  
+  feels_like=$( cat hack_stuff/weather_app/cahe_forcast.txt | jq ".list.[$i | tonumber].main.feels_like" ) 
   
   wd=$(nesw $windDirection)
   direction=$(find_heading $wd)
@@ -48,7 +50,9 @@ do
   echo " "
   echo "$( date -r $time "+| %a %b %d ~ %I:%M %p |" )"
   echo " "
-  echo "      ${temp}${temp_imperial} Wind Speed: ${windSpeed}${wind_imperial} ${direction}"
+  echo "       Temp: ${temp}${temp_imperial}"
+  echo " Feels Like: ${feels_like}${temp_imperial}"
+  echo " Wind Speed: ${windSpeed}${wind_imperial} ${direction}"
   echo "      $desc"
   echo " "
 done
