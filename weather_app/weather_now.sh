@@ -14,6 +14,8 @@ my_lon="-121.273643"
 store_lat="38.788261"
 store_lon="-121.206551"
 
+quote=$( curl -s "https://api.adviceslip.com/advice" | jq ".slip.advice" )
+
 curl -s "https://api.openweathermap.org/data/2.5/weather?lat=$my_lat&lon=$my_lon&appid=$WEATHER_KEY&units=imperial" > hack_stuff/weather_app/cahe_my_weather.txt
 
 curl -s "https://api.openweathermap.org/data/2.5/weather?lat=$store_lat&lon=$store_lon&appid=$WEATHER_KEY&units=imperial" > hack_stuff/weather_app/cahe_store_weather.txt
@@ -57,6 +59,8 @@ echo "                  $store_current_desc outside"
 echo " "
 echo "                Sunrise: $( format_time $sunrise )"
 echo "                 Sunset: $( format_time $sunset )"
+echo " "
+echo "                  Quote: $quote"
 echo " "
 
 
