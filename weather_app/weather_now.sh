@@ -16,6 +16,8 @@ store_lon="-121.206551"
 
 quote=$( curl -s "https://api.adviceslip.com/advice" | jq ".slip.advice" )
 
+kanye_quote=$( curl -s "https://api.kanye.rest" | jq ".quote" )
+
 curl -s "https://api.openweathermap.org/data/2.5/weather?lat=$my_lat&lon=$my_lon&appid=$WEATHER_KEY&units=imperial" > hack_stuff/weather_app/cahe_my_weather.txt
 
 curl -s "https://api.openweathermap.org/data/2.5/weather?lat=$store_lat&lon=$store_lon&appid=$WEATHER_KEY&units=imperial" > hack_stuff/weather_app/cahe_store_weather.txt
@@ -62,6 +64,8 @@ echo "                 Sunset: $( format_time $sunset )"
 echo " "
 echo "                  Quote: $quote"
 echo " "
-
+echo " "
+echo "            Kanye Quote: $kanye_quote"
+echo " "
 
 
