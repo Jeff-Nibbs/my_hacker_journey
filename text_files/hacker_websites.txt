@@ -1,6 +1,4 @@
-https://academy.hackthebox.com/modules/inprogress
-https://hackaday.com/
-https://www.notion.so/eaff0e2f819a4e8f8da641fb5aa89f79
+https://account.hackthebox.com/modules/inprogress
+https://tryhackme.com/dashboard
 https://www.examcompass.com/
 https://github.com/Jeff-Nibbs
-
