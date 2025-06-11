@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+folder_path="/Users/jnibbs/hack_stuff/weather_app"
+
 my_lat="38.807930"
 my_lon="-121.273643"
 
@@ -25,21 +27,21 @@ find_heading() {
   fi
 }
 
-curl -s "https://api.openweathermap.org/data/2.5/forecast?lat=$my_lat&lon=$my_lon&appid=$WEATHER_KEY&units=imperial" > ~/hack_stuff/weather_app/cahe_forcast.txt
+curl -s "https://api.openweathermap.org/data/2.5/forecast?lat=$my_lat&lon=$my_lon&appid=$WEATHER_KEY&units=imperial" > $folder_path/cahe_forcast.txt
 
 for i in {39..0};
 do
-  time=$( cat ~/hack_stuff/weather_app/cahe_forcast.txt | jq ".list.[$i | tonumber].dt" )
+  time=$( cat $folder_path/cahe_forcast.txt | jq ".list.[$i | tonumber].dt" )
  
-  temp=$( cat ~/hack_stuff/weather_app/cahe_forcast.txt | jq ".list.[$i | tonumber].main.temp" )
+  temp=$( cat $folder_path/cahe_forcast.txt | jq ".list.[$i | tonumber].main.temp" )
   
-  desc=$( cat ~/hack_stuff/weather_app/cahe_forcast.txt | jq ".list.[$i | tonumber].weather.[0].description" )
+  desc=$( cat $folder_path/cahe_forcast.txt | jq ".list.[$i | tonumber].weather.[0].description" )
   
-  windSpeed=$( cat ~/hack_stuff/weather_app/cahe_forcast.txt | jq ".list.[$i | tonumber].wind.speed" )
+  windSpeed=$( cat $folder_path/cahe_forcast.txt | jq ".list.[$i | tonumber].wind.speed" )
  
-  windDirection=$( cat ~/hack_stuff/weather_app/cahe_forcast.txt | jq ".list.[$i | tonumber].wind.deg" )
+  windDirection=$( cat $folder_path/cahe_forcast.txt | jq ".list.[$i | tonumber].wind.deg" )
   
-  feels_like=$( cat ~/hack_stuff/weather_app/cahe_forcast.txt | jq ".list.[$i | tonumber].main.feels_like" ) 
+  feels_like=$( cat $folder_path/cahe_forcast.txt | jq ".list.[$i | tonumber].main.feels_like" ) 
   
   wd=$(nesw $windDirection)
   direction=$(find_heading $wd)
