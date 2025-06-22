@@ -34,7 +34,7 @@ def spider_urls(url, keyword):
 
 
 surl = input("Enter the URL you want to scrape. ")
-keyword = input("Enter the key word to search for in the URL. ")
-spider_urls(url=surl, keyword=keyword)
+da_keyword = input("Enter the key word to search for in the URL. ")
+spider_urls(url=surl, keyword=da_keyword)
 
 # https://google.com
