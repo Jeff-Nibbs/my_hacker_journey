@@ -43,5 +43,4 @@ if target_url != "" and target_url is not None:
     driver.quit()
 
 
-    # https://github.com/Jeff-Nibbs
     # https://github.com/usernam121
