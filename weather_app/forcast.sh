@@ -58,7 +58,7 @@ do
   echo "      $desc"
   echo " "
 done
-
+figlet -cof Merlin1 "Forcast"
 
 
 
