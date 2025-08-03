@@ -1,0 +1,10 @@
+ID 05ac:0220 Apple:Keyboard
+
+REM This works on my linux hyperland setup
+REM Open the terminal
+DELAY 500
+GUI ENTER
+DELAY 500
+STRING power -w
+DELAY 500
+ENTER

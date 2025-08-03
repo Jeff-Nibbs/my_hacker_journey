@@ -1,0 +1,17 @@
+ID 05ac:0220 Apple:Keyboard
+
+REM Rick Roll People
+
+REM Open Terminal
+DELAY 1000
+GUI SPACE
+DELAY 500
+STRING terminal
+DELAY 500
+ENTER
+DELAY 1000
+
+REM Open rick roll
+STRING open -n -u https://www.youtube.com/watch?v=xvFZjo5PgG0&list=RDxvFZjo5PgG0&start_radio=1
+DELAY 750
+ENTER
