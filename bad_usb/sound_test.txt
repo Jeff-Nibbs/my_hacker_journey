@@ -1,0 +1,9 @@
+ID 05ac:021e Apple:Keyboard
+
+REM This script is a test to see how to add more functionality
+REM To the Flipper Zero Bad USB
+
+REM The plan is to host bash scripts then curl -s them and pipe bash
+REM I feel like that is how Jakoby is doing it I think
+
+
