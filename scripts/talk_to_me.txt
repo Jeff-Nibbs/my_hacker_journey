@@ -1,0 +1,3 @@
+#!/bin/bash
+
+say -v flo "Hey how are you! I can see you."

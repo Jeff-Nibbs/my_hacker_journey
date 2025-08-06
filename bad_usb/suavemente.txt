@@ -2,9 +2,6 @@ ID 05ac:0220 Apple:Keyboard
 
 REM Welcome to Suavemente
 
-$_RANDOM_MIN = 0
-$_RANDOM_MAX = 300
-
 REM Open Terminal
 DELAY 1000
 GUI SPACE
@@ -14,8 +11,9 @@ DELAY 200
 ENTER
 DELAY 850
 
+REM Set volume 
 REM Open Suavemente
-STRINGLN open -nu https://www.youtube.com/watch\?v\=RRiI3cgHp8s\&list\=RDRRiI3cgHp8s\&start_radio\=1
+STRINGLN curl -s https://gist.githubusercontent.com/Jeff-Nibbs/0753e87245af45aba1ba11d697500ec2/raw/a99e6073d64cfeaf5a83175d115551748bc224b9/suavemente.sh | bash
 DELAY 2000
 GUI R
 MOUSEMOVE 10 15
