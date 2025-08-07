@@ -7,7 +7,6 @@ FILE_TYPE = [".py", ".html", ".js", ".json", ".sh"]
 visited_urls = set()
 target_url = input("URL: ")
 
-
 if target_url != "" and target_url is not None:
     repo_urls = []
     driver = webdriver.Chrome()
